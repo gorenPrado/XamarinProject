@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using XamarinCalendarProject.Repositorio;
+using XamarinCalendarProject.ViewModels;
 
 namespace XamarinCalendarProject.Services
 {
@@ -21,8 +22,16 @@ namespace XamarinCalendarProject.Services
             ContainerBuilder builder = new ContainerBuilder();
             
             builder.RegisterType<RepositorioCalendario>();
+            builder.RegisterType<CalendarioViewModel>();
 
             container = builder.Build();
+        }
+        public CalendarioViewModel CalendarioViewModel
+        {
+            get
+            {
+                return container.Resolve<CalendarioViewModel>();
+            }
         }
 
     }

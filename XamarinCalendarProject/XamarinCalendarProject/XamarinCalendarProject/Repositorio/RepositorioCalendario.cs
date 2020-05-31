@@ -41,7 +41,7 @@ namespace XamarinCalendarProject.Repositorio
         }
         public async Task<List<Eventos>> EventoUsuario(int idusuario)
         {
-            String request = "api/Project/EventoUsuarioSinToken" + idusuario;
+            String request = "api/Project/EventoUsuarioSinToken/" + idusuario;
             List<Eventos> eventos = await CallApiAsync<List<Eventos>>(request);
             return eventos;
         }
